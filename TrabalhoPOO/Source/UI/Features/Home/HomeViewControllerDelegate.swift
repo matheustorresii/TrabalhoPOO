@@ -7,4 +7,6 @@
 
 import Foundation
 
-protocol HomeViewControllerDelegate: AnyObject { }
+protocol HomeViewControllerDelegate: AnyObject {
+    func navigateToList(type: Entity)
+}

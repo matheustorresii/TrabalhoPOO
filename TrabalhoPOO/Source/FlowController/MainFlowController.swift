@@ -41,6 +41,41 @@ class MainFlowController: UIViewController, MainFlowControllerProtocol {
     }
     
     private func homeViewController() -> UIViewController {
-        return factory.makeHomeViewController(model: HomeModel())
+        let homeViewController = factory.makeHomeViewController(model: HomeModel())
+        homeViewController.delegate = self
+        return homeViewController
+    }
+    
+    private func listViewController(model: ListModel) -> UIViewController {
+        let listViewController = factory.makeListViewController(model: model)
+        listViewController.delegate = self
+        return listViewController
+    }
+    
+    private func itemViewController(model: ItemModel) -> UIViewController {
+        let itemViewController = factory.makeItemViewController(model: model)
+        itemViewController.delegate = self
+        return itemViewController
     }
 }
+
+extension MainFlowController: HomeViewControllerDelegate {
+    func navigateToList(type: Entity) {
+        let listViewController = listViewController(model: ListModel(type: type))
+        flowNavigationController.pushViewController(listViewController, animated: true)
+    }
+}
+
+extension MainFlowController: ListViewControllerDelegate {
+    func navigateToAddNewItem(with entity: Entity) {
+        let itemViewController = itemViewController(model: ItemModel(itemOrigin: .new, entity: entity))
+        flowNavigationController.pushViewController(itemViewController, animated: true)
+    }
+    
+    func navigateToEdit(item: Item, with entity: Entity) {
+        let itemViewController = itemViewController(model: ItemModel(itemOrigin: .existent(item: item), entity: entity))
+        flowNavigationController.pushViewController(itemViewController, animated: true)
+    }
+}
+
+extension MainFlowController: ItemViewControllerDelegate { }

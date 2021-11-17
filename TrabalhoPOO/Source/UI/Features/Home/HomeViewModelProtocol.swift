@@ -6,8 +6,5 @@
 //
 
 import Foundation
-import RxSwift
 
-protocol HomeViewModelProtocol: AnyObject {
-    var viewState: BehaviorSubject<HomeViewState> { get set }
-}
+protocol HomeViewModelProtocol: AnyObject { }

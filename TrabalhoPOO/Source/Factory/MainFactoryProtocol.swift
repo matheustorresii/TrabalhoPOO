@@ -9,4 +9,6 @@ import Foundation
 
 protocol MainFactoryProtocol {
     func makeHomeViewController(model: HomeModel) -> HomeViewControllerProtocol
+    func makeListViewController(model: ListModel) -> ListViewControllerProtocol
+    func makeItemViewController(model: ItemModel) -> ItemViewControllerProtocol
 }

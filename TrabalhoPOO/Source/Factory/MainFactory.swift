@@ -25,4 +25,12 @@ class MainFactory: MainFactoryProtocol {
     func makeHomeViewController(model: HomeModel) -> HomeViewControllerProtocol {
         return resolver.resolve(HomeViewControllerProtocol.self, argument: model)!
     }
+    
+    func makeListViewController(model: ListModel) -> ListViewControllerProtocol {
+        return resolver.resolve(ListViewControllerProtocol.self, argument: model)!
+    }
+    
+    func makeItemViewController(model: ItemModel) -> ItemViewControllerProtocol {
+        return resolver.resolve(ItemViewControllerProtocol.self, argument: model)!
+    }
 }

@@ -17,6 +17,29 @@ class HomeViewController: UIViewController, HomeViewControllerProtocol {
     
     private let viewModel: HomeViewModelProtocol
     
+    // MARK: - UI
+    
+    private lazy var studentButton: Button = {
+        let button = Button()
+        button.setTitle("  GERENCIAR ALUNOS  ", for: .normal)
+        button.addTarget(self, action: #selector(goToStudents), for: .touchUpInside)
+        return button
+    }()
+    
+    private lazy var subjectButton: Button = {
+        let button = Button()
+        button.setTitle("  GERENCIAR DISCIPLINAS   ", for: .normal)
+        button.addTarget(self, action: #selector(goToSubjects), for: .touchUpInside)
+        return button
+    }()
+    
+    private lazy var courseButton: Button = {
+        let button = Button()
+        button.setTitle("  GERENCIAR CURSOS  ", for: .normal)
+        button.addTarget(self, action: #selector(goToCourses), for: .touchUpInside)
+        return button
+    }()
+    
     // MARK: - INITIALIZERS
     
     init(viewModel: HomeViewModelProtocol) {
@@ -33,7 +56,7 @@ class HomeViewController: UIViewController, HomeViewControllerProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("HOME")
+        title = "MENU"
     }
     
     // MARK: - PRIVATE METHODS
@@ -44,6 +67,36 @@ class HomeViewController: UIViewController, HomeViewControllerProtocol {
     }
     
     private func createViewHierarchy() {
+        let stackView = UIStackView(arrangedSubviews: [studentButton, subjectButton, courseButton])
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .vertical
+        stackView.alignment = .center
+        stackView.distribution = .fill
+        stackView.spacing = 8
         
+        view.addSubview(stackView)
+        
+        NSLayoutConstraint.activate([
+            stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            studentButton.heightAnchor.constraint(equalToConstant: 60),
+            studentButton.widthAnchor.constraint(equalToConstant: 280),
+            subjectButton.heightAnchor.constraint(equalToConstant: 60),
+            subjectButton.widthAnchor.constraint(equalToConstant: 280),
+            courseButton.heightAnchor.constraint(equalToConstant: 60),
+            courseButton.widthAnchor.constraint(equalToConstant: 280)
+        ])
+    }
+    
+    @objc private func goToStudents() {
+        delegate?.navigateToList(type: .student)
+    }
+    
+    @objc private func goToSubjects() {
+        delegate?.navigateToList(type: .subject)
+    }
+    
+    @objc private func goToCourses() {
+        delegate?.navigateToList(type: .course)
     }
 }

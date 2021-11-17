@@ -13,6 +13,8 @@ class MainAssembly: Assembly {
         registerFactory(container)
         registerFlowController(container)
         registerHomeViewController(container)
+        registerListViewController(container)
+        registerItemViewController(container)
     }
     
     // MARK: - FACTORY
@@ -42,6 +44,28 @@ class MainAssembly: Assembly {
         container.register(HomeViewControllerProtocol.self) { (resolver, model: HomeModel) in
             let viewModel = resolver.resolve(HomeViewModelProtocol.self, argument: model)!
             return HomeViewController(viewModel: viewModel)
+        }
+    }
+    
+    private func registerListViewController(_ container: Container) {
+        container.register(ListViewModelProtocol.self) { (resolver, model: ListModel) in
+            return ListViewModel(model: model)
+        }
+        
+        container.register(ListViewControllerProtocol.self) { (resolver, model: ListModel) in
+            let viewModel = resolver.resolve(ListViewModelProtocol.self, argument: model)!
+            return ListViewController(viewModel: viewModel)
+        }
+    }
+    
+    private func registerItemViewController(_ container: Container) {
+        container.register(ItemViewModelProtocol.self) { (resolver, model: ItemModel) in
+            return ItemViewModel(model: model)
+        }
+        
+        container.register(ItemViewControllerProtocol.self) { (resolver, model: ItemModel) in
+            let viewModel = resolver.resolve(ItemViewModelProtocol.self, argument: model)!
+            return ItemViewController(viewModel: viewModel)
         }
     }
 }

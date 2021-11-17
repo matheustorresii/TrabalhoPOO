@@ -6,12 +6,8 @@
 //
 
 import Foundation
-import RxSwift
 
 class HomeViewModel: HomeViewModelProtocol {
-    // MARK: - PUBLIC PROPERTIES
-    
-    var viewState: BehaviorSubject<HomeViewState> = .init(value: .ready)
     
     // MARK: - PRIVATE PROPERTIES
     
