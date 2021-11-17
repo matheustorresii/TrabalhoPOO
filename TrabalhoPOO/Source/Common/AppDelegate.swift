@@ -37,6 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private func createWindow() {
         window = UIWindow(frame: UIScreen.main.bounds)
+        window?.tintColor = .orange
         let mainFlowController = assembler.resolver.resolve(MainFlowControllerProtocol.self)!
         window?.rootViewController = mainFlowController
         window?.makeKeyAndVisible()

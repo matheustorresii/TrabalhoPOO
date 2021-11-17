@@ -9,4 +9,5 @@ import Foundation
 
 protocol HomeViewControllerDelegate: AnyObject {
     func navigateToList(type: Entity)
+    func navigateToTwo()
 }

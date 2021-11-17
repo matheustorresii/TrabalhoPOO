@@ -57,6 +57,12 @@ class MainFlowController: UIViewController, MainFlowControllerProtocol {
         itemViewController.delegate = self
         return itemViewController
     }
+    
+    private func twoViewController(model: TwoModel) -> UIViewController {
+        let twoViewController = factory.makeTwoViewController(model: model)
+        twoViewController.delegate = self
+        return twoViewController
+    }
 }
 
 // MARK: - HomeViewControllerDelegate
@@ -65,6 +71,11 @@ extension MainFlowController: HomeViewControllerDelegate {
     func navigateToList(type: Entity) {
         let listViewController = listViewController(model: ListModel(type: type))
         flowNavigationController.pushViewController(listViewController, animated: true)
+    }
+    
+    func navigateToTwo() {
+        let twoViewController = twoViewController(model: TwoModel())
+        flowNavigationController.pushViewController(twoViewController, animated: true)
     }
 }
 
@@ -89,3 +100,7 @@ extension MainFlowController: ItemViewControllerDelegate {
         flowNavigationController.popViewController(animated: true)
     }
 }
+
+// MARK: - TwoViewControllerDelegate
+
+extension MainFlowController: TwoViewControllerDelegate { }

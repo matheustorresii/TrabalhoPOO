@@ -21,6 +21,12 @@
 		FC20CBD227456850003B37D3 /* StudentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC20CBD127456850003B37D3 /* StudentView.swift */; };
 		FC20CBD427456857003B37D3 /* SubjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC20CBD327456857003B37D3 /* SubjectView.swift */; };
 		FC20CBD62745685E003B37D3 /* CourseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC20CBD52745685E003B37D3 /* CourseView.swift */; };
+		FC551D6B2745A17E001CA309 /* TwoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC551D6A2745A17E001CA309 /* TwoModel.swift */; };
+		FC551D6E2745A18B001CA309 /* TwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC551D6D2745A18B001CA309 /* TwoViewController.swift */; };
+		FC551D702745A190001CA309 /* TwoViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC551D6F2745A190001CA309 /* TwoViewControllerDelegate.swift */; };
+		FC551D722745A195001CA309 /* TwoViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC551D712745A195001CA309 /* TwoViewControllerProtocol.swift */; };
+		FC551D742745A19B001CA309 /* TwoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC551D732745A19B001CA309 /* TwoViewModel.swift */; };
+		FC551D762745A1A1001CA309 /* TwoViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC551D752745A1A1001CA309 /* TwoViewModelProtocol.swift */; };
 		FC8E9631274481F1003C60D8 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8E9630274481F1003C60D8 /* Entity.swift */; };
 		FC8E963427448254003C60D8 /* ListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8E963327448254003C60D8 /* ListModel.swift */; };
 		FC8E963627448263003C60D8 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8E963527448263003C60D8 /* ListViewController.swift */; };
@@ -28,6 +34,7 @@
 		FC8E963A27448272003C60D8 /* ListViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8E963927448272003C60D8 /* ListViewControllerProtocol.swift */; };
 		FC8E963C27448276003C60D8 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8E963B27448276003C60D8 /* ListViewModel.swift */; };
 		FC8E963E2744827D003C60D8 /* ListViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8E963D2744827D003C60D8 /* ListViewModelProtocol.swift */; };
+		FC92F7592745A7A8009EA0A5 /* TWO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC92F7582745A7A8009EA0A5 /* TWO.swift */; };
 		FCAE816927396CD4003A56B0 /* MainFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAE816827396CD4003A56B0 /* MainFactory.swift */; };
 		FCAE816B27396CD9003A56B0 /* MainFactoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAE816A27396CD9003A56B0 /* MainFactoryProtocol.swift */; };
 		FCAE816E27396E8D003A56B0 /* MainFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAE816D27396E8D003A56B0 /* MainFlowController.swift */; };
@@ -63,6 +70,12 @@
 		FC20CBD127456850003B37D3 /* StudentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentView.swift; sourceTree = "<group>"; };
 		FC20CBD327456857003B37D3 /* SubjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectView.swift; sourceTree = "<group>"; };
 		FC20CBD52745685E003B37D3 /* CourseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseView.swift; sourceTree = "<group>"; };
+		FC551D6A2745A17E001CA309 /* TwoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoModel.swift; sourceTree = "<group>"; };
+		FC551D6D2745A18B001CA309 /* TwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoViewController.swift; sourceTree = "<group>"; };
+		FC551D6F2745A190001CA309 /* TwoViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoViewControllerDelegate.swift; sourceTree = "<group>"; };
+		FC551D712745A195001CA309 /* TwoViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoViewControllerProtocol.swift; sourceTree = "<group>"; };
+		FC551D732745A19B001CA309 /* TwoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoViewModel.swift; sourceTree = "<group>"; };
+		FC551D752745A1A1001CA309 /* TwoViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoViewModelProtocol.swift; sourceTree = "<group>"; };
 		FC8E9630274481F1003C60D8 /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
 		FC8E963327448254003C60D8 /* ListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListModel.swift; sourceTree = "<group>"; };
 		FC8E963527448263003C60D8 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
@@ -70,6 +83,7 @@
 		FC8E963927448272003C60D8 /* ListViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewControllerProtocol.swift; sourceTree = "<group>"; };
 		FC8E963B27448276003C60D8 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		FC8E963D2744827D003C60D8 /* ListViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModelProtocol.swift; sourceTree = "<group>"; };
+		FC92F7582745A7A8009EA0A5 /* TWO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TWO.swift; sourceTree = "<group>"; };
 		FCAE816827396CD4003A56B0 /* MainFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFactory.swift; sourceTree = "<group>"; };
 		FCAE816A27396CD9003A56B0 /* MainFactoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFactoryProtocol.swift; sourceTree = "<group>"; };
 		FCAE816D27396E8D003A56B0 /* MainFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowController.swift; sourceTree = "<group>"; };
@@ -168,6 +182,20 @@
 			path = ItemView;
 			sourceTree = "<group>";
 		};
+		FC551D692745A171001CA309 /* Two */ = {
+			isa = PBXGroup;
+			children = (
+				FC92F7582745A7A8009EA0A5 /* TWO.swift */,
+				FC551D6A2745A17E001CA309 /* TwoModel.swift */,
+				FC551D6D2745A18B001CA309 /* TwoViewController.swift */,
+				FC551D6F2745A190001CA309 /* TwoViewControllerDelegate.swift */,
+				FC551D712745A195001CA309 /* TwoViewControllerProtocol.swift */,
+				FC551D732745A19B001CA309 /* TwoViewModel.swift */,
+				FC551D752745A1A1001CA309 /* TwoViewModelProtocol.swift */,
+			);
+			path = Two;
+			sourceTree = "<group>";
+		};
 		FC8E962E2744812D003C60D8 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
@@ -240,6 +268,7 @@
 				FCAE81762739725E003A56B0 /* Home */,
 				FC20CBC327455EF4003B37D3 /* Item */,
 				FC8E963227448247003C60D8 /* List */,
+				FC551D692745A171001CA309 /* Two */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -440,8 +469,11 @@
 				FC20CBC02745561C003B37D3 /* Item.swift in Sources */,
 				FC20CBD427456857003B37D3 /* SubjectView.swift in Sources */,
 				FCDD7E2427396A72002A2C84 /* MainAssembly.swift in Sources */,
+				FC551D702745A190001CA309 /* TwoViewControllerDelegate.swift in Sources */,
 				FC20CBCB27455F15003B37D3 /* ItemViewControllerProtocol.swift in Sources */,
 				FC20CBC927455F10003B37D3 /* ItemViewControllerDelegate.swift in Sources */,
+				FC551D6E2745A18B001CA309 /* TwoViewController.swift in Sources */,
+				FC551D762745A1A1001CA309 /* TwoViewModelProtocol.swift in Sources */,
 				FC8E963E2744827D003C60D8 /* ListViewModelProtocol.swift in Sources */,
 				FCAE817A2739726F003A56B0 /* HomeViewControllerDelegate.swift in Sources */,
 				FCAE818227397283003A56B0 /* HomeViewModelProtocol.swift in Sources */,
@@ -457,12 +489,16 @@
 				FCAE817327397131003A56B0 /* UIViewController+Extensions.swift in Sources */,
 				FCAE81802739727E003A56B0 /* HomeViewModel.swift in Sources */,
 				FCAE816927396CD4003A56B0 /* MainFactory.swift in Sources */,
+				FC551D6B2745A17E001CA309 /* TwoModel.swift in Sources */,
 				FC20CBCD27455F19003B37D3 /* ItemViewModel.swift in Sources */,
 				FC8E963627448263003C60D8 /* ListViewController.swift in Sources */,
 				FCDD7E0D273967A0002A2C84 /* AppDelegate.swift in Sources */,
 				FCDD7E2627396A78002A2C84 /* MainDependencyGraph.swift in Sources */,
+				FC551D722745A195001CA309 /* TwoViewControllerProtocol.swift in Sources */,
 				FCAE817E2739727A003A56B0 /* HomeViewController.swift in Sources */,
+				FC92F7592745A7A8009EA0A5 /* TWO.swift in Sources */,
 				FC20CBBA274538D6003B37D3 /* Button.swift in Sources */,
+				FC551D742745A19B001CA309 /* TwoViewModel.swift in Sources */,
 				FC20CBC727455F0A003B37D3 /* ItemViewController.swift in Sources */,
 				FC20CBCF27455F20003B37D3 /* ItemViewModelProtocol.swift in Sources */,
 			);

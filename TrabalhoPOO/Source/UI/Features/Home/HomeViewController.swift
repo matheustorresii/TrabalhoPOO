@@ -40,6 +40,13 @@ class HomeViewController: UIViewController, HomeViewControllerProtocol {
         return button
     }()
     
+    private lazy var questionTwoButton: Button = {
+        let button = Button()
+        button.setTitle("  QUESTÃO 2  ", for: .normal)
+        button.addTarget(self, action: #selector(goToQuestionTwo), for: .touchUpInside)
+        return button
+    }()
+    
     private lazy var exitButton: Button = {
         let button = Button()
         button.setTitle("  SAIR  ", for: .normal)
@@ -74,7 +81,12 @@ class HomeViewController: UIViewController, HomeViewControllerProtocol {
     }
     
     private func createViewHierarchy() {
-        let stackView = UIStackView(arrangedSubviews: [studentButton, subjectButton, courseButton, exitButton])
+        let stackView = UIStackView(arrangedSubviews: [
+            studentButton,
+            subjectButton,
+            courseButton,
+            questionTwoButton,
+            exitButton])
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.alignment = .center
@@ -89,6 +101,7 @@ class HomeViewController: UIViewController, HomeViewControllerProtocol {
             studentButton.widthAnchor.constraint(equalToConstant: 288),
             subjectButton.widthAnchor.constraint(equalToConstant: 288),
             courseButton.widthAnchor.constraint(equalToConstant: 288),
+            questionTwoButton.widthAnchor.constraint(equalToConstant: 288),
             exitButton.widthAnchor.constraint(equalToConstant: 288)
         ])
     }
@@ -105,10 +118,14 @@ class HomeViewController: UIViewController, HomeViewControllerProtocol {
         delegate?.navigateToList(type: .course)
     }
     
+    @objc private func goToQuestionTwo() {
+        delegate?.navigateToTwo()
+    }
+    
     @objc private func exitApp() {
-        // Apenas uma brincadeira com o botão de sair do app :D
-        let optional: Int? = nil
-        let crash = 1 + optional!
-        print(crash)
+//        Apenas uma brincadeira com o botão de sair do app :D
+//        let optional: Int? = nil
+//        let crash = 1 + optional!
+//        print(crash)
     }
 }

@@ -33,4 +33,8 @@ class MainFactory: MainFactoryProtocol {
     func makeItemViewController(model: ItemModel) -> ItemViewControllerProtocol {
         return resolver.resolve(ItemViewControllerProtocol.self, argument: model)!
     }
+    
+    func makeTwoViewController(model: TwoModel) -> TwoViewControllerProtocol {
+        return resolver.resolve(TwoViewControllerProtocol.self, argument: model)!
+    }
 }
