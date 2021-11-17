@@ -30,11 +30,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: - PRIVATE METHODS
     
     private func launch() -> Bool {
+        registerUserDefaultKeys()
+        createWindow()
+        return true
+    }
+    
+    private func createWindow() {
         window = UIWindow(frame: UIScreen.main.bounds)
         let mainFlowController = assembler.resolver.resolve(MainFlowControllerProtocol.self)!
         window?.rootViewController = mainFlowController
         window?.makeKeyAndVisible()
-        return true
+    }
+    
+    private func registerUserDefaultKeys() {
+        if UserDefaults.standard.data(forKey: Entity.student.identifier) == nil {
+            if let dataToSave = try? PropertyListEncoder().encode([Student]()) {
+                UserDefaults.standard.set(dataToSave, forKey: Entity.student.identifier)
+            }
+        }
+        
+        if UserDefaults.standard.data(forKey: Entity.subject.identifier) == nil {
+            if let dataToSave = try? PropertyListEncoder().encode([Subject]()) {
+                UserDefaults.standard.set(dataToSave, forKey: Entity.subject.identifier)
+            }
+        }
+        
+        if UserDefaults.standard.data(forKey: Entity.course.identifier) == nil {
+            if let dataToSave = try? PropertyListEncoder().encode([Course]()) {
+                UserDefaults.standard.set(dataToSave, forKey: Entity.course.identifier)
+            }
+        }
     }
     
 }

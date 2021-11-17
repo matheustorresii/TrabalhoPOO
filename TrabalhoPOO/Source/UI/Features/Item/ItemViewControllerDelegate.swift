@@ -7,4 +7,6 @@
 
 import Foundation
 
-protocol ItemViewControllerDelegate: AnyObject { }
+protocol ItemViewControllerDelegate: AnyObject {
+    func navigateBack()
+}

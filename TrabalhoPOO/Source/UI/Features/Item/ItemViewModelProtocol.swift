@@ -8,5 +8,9 @@
 import Foundation
 
 protocol ItemViewModelProtocol: AnyObject {
-    
+    func getEntity() -> Entity
+    func getItem() -> Item?
+    func add(student: Student)
+    func add(subject: Subject)
+    func add(course: Course)
 }

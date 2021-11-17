@@ -18,6 +18,9 @@
 		FC20CBCB27455F15003B37D3 /* ItemViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC20CBCA27455F15003B37D3 /* ItemViewControllerProtocol.swift */; };
 		FC20CBCD27455F19003B37D3 /* ItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC20CBCC27455F19003B37D3 /* ItemViewModel.swift */; };
 		FC20CBCF27455F20003B37D3 /* ItemViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC20CBCE27455F20003B37D3 /* ItemViewModelProtocol.swift */; };
+		FC20CBD227456850003B37D3 /* StudentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC20CBD127456850003B37D3 /* StudentView.swift */; };
+		FC20CBD427456857003B37D3 /* SubjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC20CBD327456857003B37D3 /* SubjectView.swift */; };
+		FC20CBD62745685E003B37D3 /* CourseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC20CBD52745685E003B37D3 /* CourseView.swift */; };
 		FC8E9631274481F1003C60D8 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8E9630274481F1003C60D8 /* Entity.swift */; };
 		FC8E963427448254003C60D8 /* ListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8E963327448254003C60D8 /* ListModel.swift */; };
 		FC8E963627448263003C60D8 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8E963527448263003C60D8 /* ListViewController.swift */; };
@@ -57,6 +60,9 @@
 		FC20CBCA27455F15003B37D3 /* ItemViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewControllerProtocol.swift; sourceTree = "<group>"; };
 		FC20CBCC27455F19003B37D3 /* ItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewModel.swift; sourceTree = "<group>"; };
 		FC20CBCE27455F20003B37D3 /* ItemViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewModelProtocol.swift; sourceTree = "<group>"; };
+		FC20CBD127456850003B37D3 /* StudentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentView.swift; sourceTree = "<group>"; };
+		FC20CBD327456857003B37D3 /* SubjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectView.swift; sourceTree = "<group>"; };
+		FC20CBD52745685E003B37D3 /* CourseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseView.swift; sourceTree = "<group>"; };
 		FC8E9630274481F1003C60D8 /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
 		FC8E963327448254003C60D8 /* ListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListModel.swift; sourceTree = "<group>"; };
 		FC8E963527448263003C60D8 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
@@ -118,6 +124,7 @@
 			children = (
 				FC20CBB8274538CC003B37D3 /* Button */,
 				FC20CBBB27453962003B37D3 /* Cell */,
+				FC20CBD02745683B003B37D3 /* ItemView */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -149,6 +156,16 @@
 				FC20CBCE27455F20003B37D3 /* ItemViewModelProtocol.swift */,
 			);
 			path = Item;
+			sourceTree = "<group>";
+		};
+		FC20CBD02745683B003B37D3 /* ItemView */ = {
+			isa = PBXGroup;
+			children = (
+				FC20CBD127456850003B37D3 /* StudentView.swift */,
+				FC20CBD327456857003B37D3 /* SubjectView.swift */,
+				FC20CBD52745685E003B37D3 /* CourseView.swift */,
+			);
+			path = ItemView;
 			sourceTree = "<group>";
 		};
 		FC8E962E2744812D003C60D8 /* Domain */ = {
@@ -421,6 +438,7 @@
 				FC8E963C27448276003C60D8 /* ListViewModel.swift in Sources */,
 				FC20CBC22745589C003B37D3 /* Collection+Extensions.swift in Sources */,
 				FC20CBC02745561C003B37D3 /* Item.swift in Sources */,
+				FC20CBD427456857003B37D3 /* SubjectView.swift in Sources */,
 				FCDD7E2427396A72002A2C84 /* MainAssembly.swift in Sources */,
 				FC20CBCB27455F15003B37D3 /* ItemViewControllerProtocol.swift in Sources */,
 				FC20CBC927455F10003B37D3 /* ItemViewControllerDelegate.swift in Sources */,
@@ -428,9 +446,11 @@
 				FCAE817A2739726F003A56B0 /* HomeViewControllerDelegate.swift in Sources */,
 				FCAE818227397283003A56B0 /* HomeViewModelProtocol.swift in Sources */,
 				FC8E963427448254003C60D8 /* ListModel.swift in Sources */,
+				FC20CBD227456850003B37D3 /* StudentView.swift in Sources */,
 				FCAE817C27397275003A56B0 /* HomeViewControllerProtocol.swift in Sources */,
 				FCAE817827397269003A56B0 /* HomeModel.swift in Sources */,
 				FC8E963A27448272003C60D8 /* ListViewControllerProtocol.swift in Sources */,
+				FC20CBD62745685E003B37D3 /* CourseView.swift in Sources */,
 				FCAE817027396E92003A56B0 /* MainFlowControllerProtocol.swift in Sources */,
 				FC8E9631274481F1003C60D8 /* Entity.swift in Sources */,
 				FCAE816B27396CD9003A56B0 /* MainFactoryProtocol.swift in Sources */,

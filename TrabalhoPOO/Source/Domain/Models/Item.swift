@@ -7,7 +7,15 @@
 
 import Foundation
 
-protocol Item { }
+protocol Item: Codable {
+    var name: String { get }
+}
+
+extension Item where Self: Equatable {
+    static func ==(lhs: Item, rhs: Item) -> Bool {
+        return lhs.name == rhs.name
+    }
+}
 
 struct Student: Item {
     let name: String
@@ -16,10 +24,18 @@ struct Student: Item {
 }
 
 struct Subject: Item {
-    enum Shift: String {
-        case morning = "Manhã"
-        case evening = "Tarde"
-        case night = "Noturno"
+    enum Shift: Int, CaseIterable, Codable {
+        case morning
+        case evening
+        case night
+        
+        var description: String {
+            switch self {
+            case .morning: return "Manhã"
+            case .evening: return "Tarde"
+            case .night:   return "Noturno"
+            }
+        }
     }
     
     let name: String
@@ -29,5 +45,4 @@ struct Subject: Item {
 struct Course: Item {
     let name: String
     let grade: Double
-    let subjects: [Subject]
 }

@@ -79,12 +79,9 @@ class HomeViewController: UIViewController, HomeViewControllerProtocol {
         NSLayoutConstraint.activate([
             stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            studentButton.heightAnchor.constraint(equalToConstant: 60),
-            studentButton.widthAnchor.constraint(equalToConstant: 280),
-            subjectButton.heightAnchor.constraint(equalToConstant: 60),
-            subjectButton.widthAnchor.constraint(equalToConstant: 280),
-            courseButton.heightAnchor.constraint(equalToConstant: 60),
-            courseButton.widthAnchor.constraint(equalToConstant: 280)
+            studentButton.widthAnchor.constraint(equalToConstant: 288),
+            subjectButton.widthAnchor.constraint(equalToConstant: 288),
+            courseButton.widthAnchor.constraint(equalToConstant: 288)
         ])
     }
     

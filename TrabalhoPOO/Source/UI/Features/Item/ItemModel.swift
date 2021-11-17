@@ -8,11 +8,6 @@
 import Foundation
 
 struct ItemModel {
-    enum ItemOrigin {
-        case new
-        case existent(item: Item)
-    }
-    
-    let itemOrigin: ItemOrigin
     let entity: Entity
+    let item: Item?
 }

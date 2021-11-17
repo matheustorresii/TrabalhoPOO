@@ -37,8 +37,8 @@ class Cell: UITableViewCell {
     
     // MARK: - INITIALIZERS
     
-    init() {
-        super.init(style: .default, reuseIdentifier: Cell.reuseIdentifier)
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupView()
     }
     
@@ -79,8 +79,8 @@ class Cell: UITableViewCell {
         
         NSLayoutConstraint.activate([
             containerStackView.topAnchor.constraint(equalTo: contentView.topAnchor),
-            containerStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            containerStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            containerStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            containerStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
             containerStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
     }
@@ -92,11 +92,11 @@ class Cell: UITableViewCell {
     
     private func setup(with subject: Subject) {
         titleLabel.text = subject.name
-        subtitleLabel.text = subject.shift.rawValue
+        subtitleLabel.text = subject.shift.description
     }
     
     private func setup(with course: Course) {
         titleLabel.text = course.name
-        titleLabel.text = "\(course.grade) pontos totais"
+        subtitleLabel.text = "\(course.grade) pontos totais"
     }
 }

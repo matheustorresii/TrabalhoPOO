@@ -59,6 +59,8 @@ class MainFlowController: UIViewController, MainFlowControllerProtocol {
     }
 }
 
+// MARK: - HomeViewControllerDelegate
+
 extension MainFlowController: HomeViewControllerDelegate {
     func navigateToList(type: Entity) {
         let listViewController = listViewController(model: ListModel(type: type))
@@ -66,16 +68,24 @@ extension MainFlowController: HomeViewControllerDelegate {
     }
 }
 
+// MARK: - ListViewControllerDelegate
+
 extension MainFlowController: ListViewControllerDelegate {
     func navigateToAddNewItem(with entity: Entity) {
-        let itemViewController = itemViewController(model: ItemModel(itemOrigin: .new, entity: entity))
+        let itemViewController = itemViewController(model: ItemModel(entity: entity, item: nil))
         flowNavigationController.pushViewController(itemViewController, animated: true)
     }
     
     func navigateToEdit(item: Item, with entity: Entity) {
-        let itemViewController = itemViewController(model: ItemModel(itemOrigin: .existent(item: item), entity: entity))
+        let itemViewController = itemViewController(model: ItemModel(entity: entity, item: item))
         flowNavigationController.pushViewController(itemViewController, animated: true)
     }
 }
 
-extension MainFlowController: ItemViewControllerDelegate { }
+// MARK: - ItemViewControllerDelegate
+
+extension MainFlowController: ItemViewControllerDelegate {
+    func navigateBack() {
+        flowNavigationController.popViewController(animated: true)
+    }
+}
