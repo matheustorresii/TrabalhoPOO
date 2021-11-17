@@ -121,12 +121,14 @@ extension ListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let item = viewModel.getItems()[safe: indexPath.row] else { return }
+        viewModel.didRemove(at: indexPath.row)
         delegate?.navigateToEdit(item: item, with: viewModel.getEntity())
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if case .delete = editingStyle {
-            
+            viewModel.didRemove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
 }

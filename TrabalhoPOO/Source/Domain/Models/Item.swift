@@ -45,4 +45,5 @@ struct Subject: Item {
 struct Course: Item {
     let name: String
     let grade: Double
+    let subject: Subject
 }

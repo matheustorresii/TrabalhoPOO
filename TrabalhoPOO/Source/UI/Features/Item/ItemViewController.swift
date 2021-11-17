@@ -41,6 +41,7 @@ class ItemViewController: UIViewController, ItemViewControllerProtocol {
     
     private func setupView() {
         view.backgroundColor = .white
+        navigationItem.setHidesBackButton(viewModel.getItem() != nil, animated: true)
         
         switch viewModel.getEntity() {
         case .student: setup(student: viewModel.getItem() as? Student)

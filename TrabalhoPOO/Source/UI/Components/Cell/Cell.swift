@@ -97,6 +97,6 @@ class Cell: UITableViewCell {
     
     private func setup(with course: Course) {
         titleLabel.text = course.name
-        subtitleLabel.text = "\(course.grade) pontos totais"
+        subtitleLabel.text = "\(course.subject.name) - \(course.grade) pontos"
     }
 }

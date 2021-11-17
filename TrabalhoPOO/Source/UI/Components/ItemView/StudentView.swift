@@ -118,7 +118,6 @@ class StudentView: UIView {
     private func setupWith(student: Student) {
         nameTextField.text = student.name
         ageTextField.text = "\(student.age)"
-        coursePicker.selectRow(0, inComponent: 1, animated: true)
     }
     
     @objc private func didTapConfirm() {

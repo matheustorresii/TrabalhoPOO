@@ -10,4 +10,5 @@ import Foundation
 protocol ListViewModelProtocol: AnyObject {
     func getEntity() -> Entity
     func getItems() -> [Item]
+    func didRemove(at index: Int)
 }

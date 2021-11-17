@@ -40,6 +40,13 @@ class HomeViewController: UIViewController, HomeViewControllerProtocol {
         return button
     }()
     
+    private lazy var exitButton: Button = {
+        let button = Button()
+        button.setTitle("  SAIR  ", for: .normal)
+        button.addTarget(self, action: #selector(exitApp), for: .touchUpInside)
+        return button
+    }()
+    
     // MARK: - INITIALIZERS
     
     init(viewModel: HomeViewModelProtocol) {
@@ -67,7 +74,7 @@ class HomeViewController: UIViewController, HomeViewControllerProtocol {
     }
     
     private func createViewHierarchy() {
-        let stackView = UIStackView(arrangedSubviews: [studentButton, subjectButton, courseButton])
+        let stackView = UIStackView(arrangedSubviews: [studentButton, subjectButton, courseButton, exitButton])
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.alignment = .center
@@ -81,7 +88,8 @@ class HomeViewController: UIViewController, HomeViewControllerProtocol {
             stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             studentButton.widthAnchor.constraint(equalToConstant: 288),
             subjectButton.widthAnchor.constraint(equalToConstant: 288),
-            courseButton.widthAnchor.constraint(equalToConstant: 288)
+            courseButton.widthAnchor.constraint(equalToConstant: 288),
+            exitButton.widthAnchor.constraint(equalToConstant: 288)
         ])
     }
     
@@ -95,5 +103,12 @@ class HomeViewController: UIViewController, HomeViewControllerProtocol {
     
     @objc private func goToCourses() {
         delegate?.navigateToList(type: .course)
+    }
+    
+    @objc private func exitApp() {
+        // Apenas uma brincadeira com o botão de sair do app :D
+        let optional: Int? = nil
+        let crash = 1 + optional!
+        print(crash)
     }
 }

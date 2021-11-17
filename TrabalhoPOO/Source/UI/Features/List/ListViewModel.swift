@@ -29,6 +29,31 @@ class ListViewModel: ListViewModelProtocol {
         return getItemsFromUserDefaults()
     }
     
+    func didRemove(at index: Int) {
+        var items = getItemsFromUserDefaults()
+        
+        if var students = items as? [Student] {
+            students.remove(at: index)
+            if let dataToSave = try? PropertyListEncoder().encode(students) {
+                UserDefaults.standard.set(dataToSave, forKey: Entity.student.identifier)
+            }
+        }
+        
+        if var subjects = items as? [Subject] {
+            subjects.remove(at: index)
+            if let dataToSave = try? PropertyListEncoder().encode(subjects) {
+                UserDefaults.standard.set(dataToSave, forKey: Entity.subject.identifier)
+            }
+        }
+        
+        if var courses = items as? [Course] {
+            courses.remove(at: index)
+            if let dataToSave = try? PropertyListEncoder().encode(courses) {
+                UserDefaults.standard.set(dataToSave, forKey: Entity.course.identifier)
+            }
+        }
+    }
+    
     // MARK: - PRIVATE METHODS
     
     private func getItemsFromUserDefaults() -> [Item] {

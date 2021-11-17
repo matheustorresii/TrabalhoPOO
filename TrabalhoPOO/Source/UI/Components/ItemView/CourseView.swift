@@ -16,6 +16,15 @@ class CourseView: UIView {
     // MARK: - PUBLIC PROPERTIES
     
     weak var delegate: CourseViewDelegate?
+    
+    // MARK: - PRIVATE PROPERTIES
+    
+    private var selectedIndex: Int = 0
+    private lazy var subjects: [Subject] = {
+        guard let savedData = UserDefaults.standard.data(forKey: Entity.subject.identifier),
+              let subjects = try? PropertyListDecoder().decode([Subject].self, from: savedData) else { return [] }
+        return subjects
+    }()
 
     // MARK: - UI
     
@@ -42,6 +51,14 @@ class CourseView: UIView {
         textField.layer.cornerRadius = 8
         textField.keyboardType = .numberPad
         return textField
+    }()
+    
+    private lazy var subjectPicker: UIPickerView = {
+        let pickerView = UIPickerView(frame: .zero)
+        pickerView.translatesAutoresizingMaskIntoConstraints = false
+        pickerView.dataSource = self
+        pickerView.delegate = self
+        return pickerView
     }()
     
     private lazy var confirmButton: Button = {
@@ -73,6 +90,7 @@ class CourseView: UIView {
         
         addSubview(nameTextField)
         addSubview(gradeTextField)
+        addSubview(subjectPicker)
         addSubview(confirmButton)
         
         NSLayoutConstraint.activate([
@@ -86,7 +104,12 @@ class CourseView: UIView {
             gradeTextField.trailingAnchor.constraint(equalTo: trailingAnchor),
             gradeTextField.heightAnchor.constraint(equalToConstant: 60),
             
-            confirmButton.topAnchor.constraint(greaterThanOrEqualTo: gradeTextField.bottomAnchor),
+            subjectPicker.topAnchor.constraint(equalTo: gradeTextField.bottomAnchor, constant: 8),
+            subjectPicker.leadingAnchor.constraint(equalTo: leadingAnchor),
+            subjectPicker.trailingAnchor.constraint(equalTo: trailingAnchor),
+            
+            
+            confirmButton.topAnchor.constraint(greaterThanOrEqualTo: subjectPicker.bottomAnchor),
             confirmButton.leadingAnchor.constraint(equalTo: leadingAnchor),
             confirmButton.trailingAnchor.constraint(equalTo: trailingAnchor),
             confirmButton.bottomAnchor.constraint(equalTo: bottomAnchor)
@@ -101,8 +124,33 @@ class CourseView: UIView {
     @objc private func didTapConfirm() {
         guard let name = nameTextField.text,
               let gradeText = gradeTextField.text,
-              let grade = Double(gradeText) else { return }
-        let course = Course(name: name, grade: grade)
+              let grade = Double(gradeText),
+              let subject = subjects[safe: selectedIndex] else { return }
+        let course = Course(name: name, grade: grade, subject: subject)
         delegate?.didConfirm(course: course)
+    }
+}
+
+// MARK: - UIPickerViewDataSource
+
+extension CourseView: UIPickerViewDataSource {
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        subjects.count
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        1
+    }
+}
+
+// MARK: - UIPickerViewDelegate
+
+extension CourseView: UIPickerViewDelegate {
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        selectedIndex = row
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        subjects[safe: row]?.name
     }
 }
