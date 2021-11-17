@@ -54,6 +54,16 @@ class HomeViewController: UIViewController, HomeViewControllerProtocol {
         return button
     }()
     
+    private lazy var namesLabel: UILabel = {
+        let label = UILabel(frame: .zero)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Heitor Moreira\n\nMatheus Torres\n\nPedro de Abreu"
+        label.font = .systemFont(ofSize: 22, weight: .black)
+        label.textAlignment = .center
+        label.numberOfLines = .zero
+        return label
+    }()
+    
     // MARK: - INITIALIZERS
     
     init(viewModel: HomeViewModelProtocol) {
@@ -94,6 +104,7 @@ class HomeViewController: UIViewController, HomeViewControllerProtocol {
         stackView.spacing = 8
         
         view.addSubview(stackView)
+        view.addSubview(namesLabel)
         
         NSLayoutConstraint.activate([
             stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -102,7 +113,10 @@ class HomeViewController: UIViewController, HomeViewControllerProtocol {
             subjectButton.widthAnchor.constraint(equalToConstant: 288),
             courseButton.widthAnchor.constraint(equalToConstant: 288),
             questionTwoButton.widthAnchor.constraint(equalToConstant: 288),
-            exitButton.widthAnchor.constraint(equalToConstant: 288)
+            exitButton.widthAnchor.constraint(equalToConstant: 288),
+            namesLabel.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 8),
+            namesLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            namesLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
     }
     
